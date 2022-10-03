@@ -4,10 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
-//using TEST1;
-//using TEST2;
-//using TEST3;
-
 
 public class BT_AgentController : MonoBehaviour
 {
@@ -120,50 +116,6 @@ public class BT_AgentController : MonoBehaviour
         home_rep.AddChild(play_or_eat);
         play_or_eat.AddChild(play);
         play_or_eat.AddChild(eat);
-
-
-
-        // TEST 1: Test leaf tasks with duration
-        //Sequence seq = new Sequence("Do tasks 1 and 2", tree);
-        //Task1 t1 = new Task1("Task1", 5, seq);
-        //Task2 t2 = new Task2("Task2", 6, seq);
-        //PrintFin pf = new PrintFin("PrintFin", seq);
-
-        //seq.AddChild(t1);
-        //seq.AddChild(t2);
-        //seq.AddChild(pf);
-        //tree.AddChild(seq);
-
-
-
-        // TEST 2: Test Repeater node
-        //Sequence seq = new Sequence("Do tasks 1, 2, 3", tree);
-        //Repeator rep = new Repeator("Repeating tasks 1 and 2", 5, seq);
-        //Task1 t1 = new Task1("Task1", seq);
-        //Task2 t2 = new Task2("Task2", seq);
-        //Task3 t3 = new Task3("Task3", seq);
-
-        //seq.AddChild(rep);
-        //rep.AddChild(t1);
-        //rep.AddChild(t2);
-        //seq.AddChild(t3);
-        //tree.AddChild(seq);
-
-
-
-        // TEST 3: Test Repeater node
-        //Sequence seq = new Sequence("Do tasks 1, 2, 3", tree);
-        //Repeator rep = new Repeator("Repeating tasks 1 and 2", 10, seq);
-        //Task1 t1 = new Task1("Task1", 2, rep);
-        //Task2 t2 = new Task2("Task2", 2, rep);
-        //PrintFin pf = new PrintFin("PrintFin", seq);
-
-        //seq.AddChild(rep);
-        //rep.AddChild(t1);
-        //rep.AddChild(t2);
-        //seq.AddChild(pf);
-        //tree.AddChild(seq); 
-
 
         tree.PrintTree();
     }
