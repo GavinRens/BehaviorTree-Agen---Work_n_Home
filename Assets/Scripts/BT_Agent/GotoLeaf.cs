@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+// A leaf node that takes the agent to a given waypoint
 public class GotoLeaf : Node
 {
     GameObject waypoint;
@@ -22,6 +22,11 @@ public class GotoLeaf : Node
     }
 
 
+    /// <summary>
+    /// Makes the agent navigate to a given destination
+    /// </summary>
+    /// <param name="destinatoin">A waypoint or position to move to</param>
+    /// <returns>The BT-node status</returns>
     private Node.Status GotoLocation(Vector3 destinatoin)
     {
         if (actionState == ActionState.IDLE)

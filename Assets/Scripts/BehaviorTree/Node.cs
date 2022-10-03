@@ -24,6 +24,11 @@ public class Node
     }
 
 
+    /// <summary>
+    /// Contains the main logic for each kind of node (i.e. internal or leaf).
+    /// Typically needs to be overridden.
+    /// </summary>
+    /// <returns></returns>
     public virtual Status Process()
     {
         return children[currentChild].Process();

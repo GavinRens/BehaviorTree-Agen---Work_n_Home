@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class AssembleLeaf : Node
 {
@@ -8,11 +7,13 @@ public class AssembleLeaf : Node
     float elapsed;
     float previousTime;
 
+
     public AssembleLeaf(string name, float duration, Node parent) : base(name, parent)
     {
         this.duration = duration;
         elapsed = 0;
     }
+
 
     public override Status Process()
     {

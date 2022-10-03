@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 
 public class Environment : MonoBehaviour
 {
@@ -30,6 +29,7 @@ public class Environment : MonoBehaviour
     }
 
 
+    // Selects one of the three paths to be open at random (other two paths are closed)
     private void ShuffleOpenPath()
     {
         int index = Random.Range(0, 3);
@@ -50,6 +50,7 @@ public class Environment : MonoBehaviour
     }
 
 
+    // The method to invoke with a delay; the time bwix open-path suffles
     private void SetTimeToShuffle()
     {
         timeToShuffleOpenPath = true;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 // Must be the parent of one selector or sequence node
 public class Repeator : Node
 {
@@ -29,6 +30,7 @@ public class Repeator : Node
                 elapsed += Time.time - previousTime;
                 previousTime = Time.time;
             }
+            
             Status childStatus = children[0].Process();
             switch (childStatus)
             {

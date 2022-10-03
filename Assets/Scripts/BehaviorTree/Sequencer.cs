@@ -1,14 +1,11 @@
 
 public class Sequencer : Node
 {
-    public Sequencer(string n, Node p = null) : base(n, p)
-    {
-       
-    }
+    public Sequencer(string n, Node p = null) : base(n, p) { }
+
 
     public override Status Process()
     {
-        //UnityEngine.Debug.Log("In Sequence: " + name);
         Status childStatus = children[currentChild].Process();
         switch (childStatus)
         {

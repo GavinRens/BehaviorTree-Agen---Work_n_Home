@@ -1,14 +1,11 @@
 
 public class Selector : Node
 {
-    public Selector(string n, Node p = null) : base(n, p)
-    {
-        
-    }
+    public Selector(string n, Node p = null) : base(n, p) { }
+
 
     public override Status Process()
     {
-        //UnityEngine.Debug.Log("In Selector: " + name);
         Status childStatus = children[currentChild].Process();
         switch (childStatus)
         {

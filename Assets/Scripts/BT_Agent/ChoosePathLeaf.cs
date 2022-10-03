@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+// A conditional node; the first child of a Sequencer
 public class ChoosePathLeaf : Node
 {
     GameObject path;
@@ -11,6 +11,7 @@ public class ChoosePathLeaf : Node
     {
         this.path = path;
     }
+
 
     public override Status Process()
     {
