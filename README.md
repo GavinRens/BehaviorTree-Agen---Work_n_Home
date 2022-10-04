@@ -10,7 +10,7 @@ Then the agent must go home, where it plays and eats for a while, then sleeps in
 Then the agent goes to work and the cycle continues.
 A behavior tree is used for all the control - no planning occurs.
 
-This environment is almost the same as the one used in my project where a hybrid (BDI / Reward Machine) controller is used [GitHub](https://github.com/GavinRens/Hybrid-Agent---Work_n_Home).
+This environment is almost the same as the one used in my project where a hybrid (BDI / Reward Machine) controller is used [GitHub](https://github.com/GavinRens/Hybrid-Agent---Work-n-Home).
 However, here i have three paths that the agent must choose between, depending on which path is open (only one is open at a time).
 This addition is made to illustrate the use of a Selector node.
 
@@ -41,7 +41,7 @@ In the picture above, the subtrees routed at the Selector nodes are identical. I
 
 - The project is developed with Unity Editor version 2021.3.9f1 and C# version 9.0 on a Windows operating system.
 
-- The project can be cloned from [GitHub](https://github.com/GavinRens/BehaviorTree-Agent---Work_n_Home).
+- The project can be cloned from [GitHub](https://github.com/GavinRens/BehaviorTree-Agent---Work-n-Home).
 
 - In your command line interface, run `git clone <URL>` in the local directory of your choice, where `<URL>` is the url displayed under Code -> HTTPS of the GitHub repo landing page.
 
