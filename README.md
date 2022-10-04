@@ -10,7 +10,7 @@ Then the agent must go home, where it plays and eats for a while, then sleeps in
 Then the agent goes to work and the cycle continues.
 A behavior tree is used for all the control - no planning occurs.
 
-This environment is almost the same as the one used in my project where a hybrid (BDI / Reward Machine) controller is used [GitHub](https://github.com/GavinRens/Hybrid-Agen---Work_n_Home).
+This environment is almost the same as the one used in my project where a hybrid (BDI / Reward Machine) controller is used [GitHub](https://github.com/GavinRens/Hybrid-Agent---Work_n_Home).
 However, here i have three paths that the agent must choose between, depending on which path is open (only one is open at a time).
 This addition is made to illustrate the use of a Selector node.
 
