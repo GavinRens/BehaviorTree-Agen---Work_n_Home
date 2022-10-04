@@ -15,6 +15,7 @@ public class ChoosePathLeaf : Node
 
     public override Status Process()
     {
+        //Debug.Log("path.GetComponent<PathBehavior>().open: " + path.GetComponent<PathBehavior>().open);
         if (path.GetComponent<PathBehavior>().open)
             return Status.SUCCESS;
         else

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,6 +11,9 @@ public class BT_AgentController : MonoBehaviour
     public GameObject sittingRoom;
     public GameObject bedroom;
     public GameObject actionStatus;
+    public GameObject path1;
+    public GameObject path2;
+    public GameObject path3;
     public GameObject path1Marker;
     public GameObject path2Marker;
     public GameObject path3Marker;
@@ -58,9 +59,9 @@ public class BT_AgentController : MonoBehaviour
         Sequencer path1Seq = new Sequencer("path1Seq");
         Sequencer path2Seq = new Sequencer("path2Seq");
         Sequencer path3Seq = new Sequencer("path3Seq");
-        ChoosePathLeaf tryPath1 = new ChoosePathLeaf("tryPath1", path1Marker);
-        ChoosePathLeaf tryPath2 = new ChoosePathLeaf("tryPath2", path2Marker);
-        ChoosePathLeaf tryPath3 = new ChoosePathLeaf("tryPath3", path3Marker);
+        ChoosePathLeaf tryPath1 = new ChoosePathLeaf("tryPath1", path1);
+        ChoosePathLeaf tryPath2 = new ChoosePathLeaf("tryPath2", path2);
+        ChoosePathLeaf tryPath3 = new ChoosePathLeaf("tryPath3", path3);
         GotoLeaf path1_1stHalf = new GotoLeaf("Via Path 1", path1Marker, navMeshAgent, this.gameObject, gotoHome_1stHalf);
         GotoLeaf path2_1stHalf = new GotoLeaf("Via Path 2", path2Marker, navMeshAgent, this.gameObject, gotoHome_1stHalf);
         GotoLeaf path3_1stHalf = new GotoLeaf("Via Path 3", path3Marker, navMeshAgent, this.gameObject, gotoHome_1stHalf);

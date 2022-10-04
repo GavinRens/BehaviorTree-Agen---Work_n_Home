@@ -5,9 +5,10 @@ using TMPro;
 public class Environment : MonoBehaviour
 {
     public GameObject[] Paths;
-    bool timeToShuffleOpenPath;
     public GameObject agent;
+    
     BT_AgentController agentController;
+    bool timeToShuffleOpenPath;
 
 
     void Start()
@@ -32,22 +33,68 @@ public class Environment : MonoBehaviour
     // Selects one of the three paths to be open at random (other two paths are closed)
     private void ShuffleOpenPath()
     {
+        Transform xform;
         int index = Random.Range(0, 3);
+        BlackBoard.ACTIVE_PATH = index;
+
         for (int i = 0; i < Paths.Length; i++)
+        {
             if (i == index)
             {
-                BlackBoard.ACTIVE_PATH = i;
                 Paths[i].GetComponentInChildren<TextMeshPro>().text = "OPEN";
-                Paths[i].GetComponentInChildren<Transform>().gameObject.SetActive(false);
-                Paths[i].GetComponentInChildren<PathBehavior>().open = true;
+                for (int j = 0; j < Paths[i].transform.childCount; j++)
+                {
+                    if (Paths[i].transform.GetChild(j).gameObject.CompareTag("barricade")) 
+                        Paths[i].transform.GetChild(j).gameObject.SetActive(false);
+                }
+                Paths[i].GetComponent<PathBehavior>().open = true;
             }
             else
             {
                 Paths[i].GetComponentInChildren<TextMeshPro>().text = "CLOSED";
-                Paths[i].GetComponentInChildren<Transform>().gameObject.SetActive(true);
-                Paths[i].GetComponentInChildren<PathBehavior>().open = false;
+                for (int j = 0; j < Paths[i].transform.childCount; j++)
+                {
+                    if (Paths[i].transform.GetChild(j).gameObject.CompareTag("barricade"))
+                        Paths[i].transform.GetChild(j).gameObject.SetActive(true);
+                }
+                Paths[i].GetComponent<PathBehavior>().open = false;
             }
+        }
     }
+
+    //private void ShuffleOpenPath()
+    //{
+    //    Transform[] xforms;
+    //    int index = Random.Range(0, 3);
+    //    BlackBoard.ACTIVE_PATH = index;
+
+    //    for (int i = 0; i < Paths.Length; i++)
+    //    {
+    //        xforms = Paths[i].GetComponentsInChildren<Transform>();
+    //        if (i == index)
+    //        {
+    //            Paths[i].GetComponentInChildren<TextMeshPro>().text = "OPEN";
+    //            //barracade = Paths[i].GetComponentsInChildren<Transform>()[1];
+    //            //barracade.gameObject.SetActive(false);
+    //            foreach (Transform t in xforms)
+    //                if (t.CompareTag("barricade"))
+    //                    t.gameObject.SetActive(false);
+    //            //Paths[i].GetComponentInChildren<Transform>().gameObject.SetActive(false);
+    //            Paths[i].GetComponentInChildren<PathBehavior>().open = true;
+    //        }
+    //        else
+    //        {
+    //            Paths[i].GetComponentInChildren<TextMeshPro>().text = "CLOSED";
+    //            //barracade = Paths[i].GetComponentsInChildren<Transform>()[1];
+    //            //barracade.gameObject.SetActive(true);
+    //            foreach (Transform t in xforms)
+    //                if (t.CompareTag("barricade"))
+    //                    t.gameObject.SetActive(true);
+    //            //Paths[i].GetComponentInChildren<Transform>().gameObject.SetActive(true);
+    //            Paths[i].GetComponentInChildren<PathBehavior>().open = false;
+    //        }
+    //    }
+    //}
 
 
     // The method to invoke with a delay; the time bwix open-path suffles

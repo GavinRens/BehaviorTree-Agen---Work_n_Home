@@ -23,7 +23,6 @@ public class AssembleLeaf : Node
             if (elapsed == 0)
             {
                 float rand = Random.value;
-                Debug.Log("rand in Ass: " + rand);
                 if (rand > 0.2f)
                 {
                     elapsed = 0.0001f;

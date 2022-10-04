@@ -23,7 +23,6 @@ public class TakeBreakLeaf : Node
             if (elapsed == 0)
             {
                 float rand = Random.value;
-                Debug.Log("rand in TaB: " + rand);
                 if (rand > 0.8f)
                 {
                     elapsed = 0.0001f;

@@ -50,7 +50,7 @@ public class GotoLeaf : Node
     
     public override Status Process()
     {
-        if(name == "Goto Work" || name == "via Path 1" || name == "via Path 2" || name == "via Path 3" || name == "gotoHome")
+        if(name == "Goto Work" || name == "Via Path 1" || name == "Via Path 2" || name == "Via Path 3" || name == "Goto Home")
             agentController.traveling = true;
         else
             agentController.traveling = false;
